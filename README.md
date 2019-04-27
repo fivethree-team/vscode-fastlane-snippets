@@ -1,7 +1,7 @@
 # Fastlane Snippets for VS Code
 
-[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/version/vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fastlane-snippets)
-[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs/vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=vscode-fastlane-snippets)
+[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/version/fivethree.vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fastlane-snippets)
+[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs/fivethree.vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fastlane-snippets)
 
 Visual Studio Code Extension adds fastlane snippets to your favorite IDE.
 
