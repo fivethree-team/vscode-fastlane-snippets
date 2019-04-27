@@ -1,0 +1,414 @@
+{
+    "fastlane-lane": {
+        "prefix": "f-lane",
+        "body": [
+            "desc \"${1:Add description of lane}\"",
+            "lane :${2:name} do |options|",
+             "\t${3:#add actions here}",
+            "end"
+        ],
+        "description": "fastlane snippet lane"
+    },
+    "fastlane-lane_private": {
+        "prefix": "f-lane-private",
+        "body": [
+            "#hidden from lanes,list,docs",
+            "desc \"${1:Add description of lane}\"",
+            "private_lane :${2:name} do |options|",
+             "\t${3:#add actions here}",
+            "end"
+        ],
+        "description": "fastlane snippet lane"
+    },
+    "fastlane-appfile": {
+        "prefix": "f-appfile",
+        "body": [
+            "app_identifier \"${1:com.example.app}\" # The bundle identifier of your app",
+            "apple_id \"${2:user@example.com}\"  # Your Apple email address",
+
+            "# team_name \"${3:Team}\"",
+            "# team_id \"${4:Q2CBPJ58CA}\"",
+
+            "# To select a team for App Store Connect use",
+            "# itc_team_name \"${5:Company}\"",
+            "# itc_team_id \"${6:18742801}\""
+        ],
+        "description": "fastlane snippet for the appfile"
+    },
+    "fastlane-appfile-get-value": {
+        "prefix": "f-appfile-get-value",
+        "body": [
+            "CredentialsManager::AppfileConfig.try_fetch_value(:${1:app_identifier})"
+        ],
+        "description": "get variable from appfile"
+    },
+    "fastlane-lane-before_all": {
+        "prefix": "f-lane-before_all",
+        "body": [
+            "before_all do |lane, options|",
+            "\t# ...",
+            "end"
+        ],
+        "description": "fastlane snippet lane before all"
+    },
+    "fastlane-lane-before_each": {
+        "prefix": "f-lane-before_each",
+        "body": [
+            "before_each do |lane, options|",
+            "\t# ...",
+            "end"
+        ],
+        "description": "fastlane snippet lane before each"
+    },
+    "fastlane-lane-after-all": {
+        "prefix": "f-lane-after-all",
+        "body": [
+            "after_all do |lane, options|",
+            "\t# ...",
+            "end"
+        ],
+        "description": "fastlane snippet lane after all"
+    },
+    "fastlane-lane-after-each": {
+        "prefix": "f-lane-after-each",
+        "body": [
+            "after_each do |lane, options|",
+            "\t# ...",
+            "end"
+        ],
+        "description": "fastlane snippet lane after each"
+    },
+    "fastlane-lane-error": {
+        "prefix": "f-lane-error",
+        "body": [
+            "error do |lane, exception, options|",
+            "\tif options[:debug]",
+            "\t\t# ...)",
+            "\tend",
+            "end"
+        ],
+        "description": "fastlane snippet lane error"
+    },
+    "fastlane-action-lane-context": {
+        "prefix": "f-action-lane-context",
+        "body": [
+            "lane_context[SharedValues::${1:VARIABLE_NAME_HERE}]"
+        ],
+        "description": "fastlane snippet lane context variable"
+    },
+    "fastlane-environment": {
+        "prefix": "f-env",
+        "body": [
+            "ENV[${1:VARIABLE_NAME_HERE}]"
+        ],
+        "description": "fastlane snippet env variable"
+    },
+    "fastlane-password": {
+        "prefix": "f-password",
+        "body": [
+            "# The password will be stored in the keychain and can be removed in the console: \"fastlane fastlane-credentials remove --username ${1:name}\"",
+            "puts \"Please enter the password for ${2:keychain_entry}:\"",
+            "${2:keychain_entry} = CredentialsManager::AccountManager.new(user: \"${1:name}\")",
+            "${3:password} = ${2:keychain_entry}.password"
+        ],
+        "description": "fastlane snippet enter password"
+    },
+    "fastlane-ui-message": {
+        "prefix": "f-ui-message",
+        "body": [
+            "UI.message \"${1:Neutral message (usually white)}\""
+        ],
+        "description": "ui message"
+    },
+    "fastlane-ui-success": {
+        "prefix": "f-ui-success",
+        "body": [
+            "UI.success \"${1:Successfully finished processing (usually green)}\""
+                ],
+        "description": "ui message"
+    },
+    "fastlane-ui-error": {
+        "prefix": "f-ui-error",
+        "body": [
+            "UI.error \"${1:Wahaha, what's going on here! (usually red)}\""
+                ],
+        "description": "ui message"
+    },
+    "fastlane-ui-user-error": {
+        "prefix": "f-ui-user-error",
+        "body": [
+            "UI.user_error!(\"${1:You don't have a project in the current directory}\")"
+                ],
+        "description": "ui message"
+    },
+    "fastlane-ui-important": {
+        "prefix": "f-ui-important",
+        "body": [
+            "UI.important \"${1:Make sure to use Windows (usually yellow)}\""
+                ],
+        "description": "ui message"
+    },
+    "fastlane-ui-header": {
+        "prefix": "f-ui-header",
+        "body": [
+            "UI.header \"${1:A big box}\""
+                ],
+        "description": "ui message"
+    },
+    "fastlane-ui-input": {
+        "prefix": "f-ui-input",
+        "body": [
+            "${1:name} = UI.input(\"${2:What's your name?}\")"
+
+                ],
+        "description": "ui input"
+    },
+    "fastlane-ui-input-password": {
+        "prefix": "f-ui-input-password",
+        "body": [
+            "${1:password} = UI.password(\"${2:What's your password?}\")"
+
+                ],
+        "description": "ui input"
+    },
+    "fastlane-ui-confirm": {
+        "prefix": "f-ui-confirm",
+        "body": [
+            "${1:is_there} = UI.confirm(\"${2:Are you there?}\")"
+            
+                ],
+        "description": "ui input"
+    },
+    "fastlane-ui-select": {
+        "prefix": "f-ui-select",
+        "body": [
+            "${1:selection} = UI.select(\"${2:Select your project}: \", ${3:[\"Test Project\", \"Test Workspace\"]})"   
+                ],
+        "description": "ui input"
+    },
+    "fastlane-ui-crash": {
+        "prefix": "f-ui-crash",
+        "body": [
+            "UI.crash!(\"${1:Network timeout}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-command": {
+        "prefix": "f-ui-command",
+        "body": [
+            "UI.command(\"${1:command being executed}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-command-output": {
+        "prefix": "f-ui-command-output",
+        "body": [
+            "UI.command_output(\"${1:command output here}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-verbose": {
+        "prefix": "f-ui-verbose",
+        "body": [
+            "UI.verbose(\"${1:verbose output here}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-error-shell": {
+        "prefix": "f-ui-error-shell",
+        "body": [
+            "UI.shell_error!(\"${1:shell command failed}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-error-build": {
+        "prefix": "f-ui-error-build",
+        "body": [
+            "UI.build_failure!(\"${1:build failed}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-error-test": {
+        "prefix": "f-ui-error-test",
+        "body": [
+            "UI.test_failure!(\"${1:test failed}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-ui-error-abort": {
+        "prefix": "f-ui-error-abort",
+        "body": [
+            "UI.abort_with_message!(\"${1:Report a failure condition that prevents continuing}\")"          
+             ],
+        "description": "ui input"
+    },
+    "fastlane-execute-shell": {
+        "prefix": "f-sh-simple",
+        "body": [
+            "sh \"${1:put your command here}\""
+             ],
+        "description": ""
+    },
+    "fastlane-execute-shell-complex": {
+        "prefix": "f-sh-complex",
+        "body": [
+            "sh \"$:{1:your command here}\", do |status, result, command|",
+            "unless status.success?",
+              "${2:UI.error \"Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}}\"",
+            "end",
+           "${3:UI.message \"Output is #{result.inspect}\"}",
+          "end"
+                       ],
+        "description": ""
+    },
+    "fastlane-execute-shell-error-callback": {
+        "prefix": "f-sh-error-callback",
+        "body": [
+            "success = true",
+            "sh(\"${1:your command here}\", error_callback: ->(result) { success = false })",
+            "UI.user_error \"${2:Command failed}\" unless success"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-gym": {
+        "prefix": "f-action-gym",
+        "body": [
+            "gym(",
+            "\tproject: \"${1:MyApp.xcodeproj}\",",
+            "\tconfiguration: \"${2|Debug,Release|}\",",
+            "\tscheme: \"${3:MyApp}\",",
+            "\tsilent: ${4|true,false|},",
+            "\tclean: ${5|true,false|},",
+            "\toutput_directory: \"${6:path/to/dir}\",",
+            "\toutput_name: \"${7:my-app.ipa}\",",
+            ")"
+                       ],
+        "description": ""
+    },
+    "fastlane-gymfile": {
+        "prefix": "f-gymfile",
+        "body": [
+            "scheme(\"${1:Example}\")",
+            "clean(${2|true,false|})",
+            "output_directory(\"${3:./build}\")",   
+            "output_name(\"${4:MyApp}\") "         
+                       ],
+        "description": ""
+    },
+    "fastlane-action-match": {
+        "prefix": "f-action-match",
+        "body": [
+            "match(git_url: \"${1:https://github.com/fastlane/certificates}\",",
+            "type: \"${2|development,appstore,adhoc,enterprise|}\",",
+            "app_identifier: \"${3:tools.fastlane.app}\")"
+                       ],
+        "description": ""
+    },
+    "fastlane-matchfile": {
+        "prefix": "f-matchfile",
+        "body": [
+            "git_url(\"${1:https://github.com/fastlane/certificates}\")",
+            "app_identifier(\"${2:tools.fastlane.app}\")"   ,    
+            "username(\"${3:username}\")",      
+            "team_id(\"${3:team_id}\")"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-automatic-code-signing": {
+        "prefix": "f-action-automatic-code-signing",
+        "body": [
+            "automatic_code_signing(",
+            "path: \"${1:demo.xcodeproj}\",",
+            "use_automatic_signing: ${2|true,false|}",
+            ")"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-pilot": {
+        "prefix": "f-action-pilot",
+        "body": [
+            "pilot(",
+            "username: \"${1:felix@krausefx.com}\",",
+            "app_identifier: \"${2:com.example.app}\",",
+            "ipa: \"${3:path}\",",
+            "changelog: \"${4:whats new text}\",",
+            "skip_waiting_for_build_processing: \"${5|true,false|}\",",
+            ")"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-supply": {
+        "prefix": "f-action-supply",
+        "body": [
+            "supply(",
+            "apk: \"${1:path/to/apk}\",",
+            "package_name: \"${2:com.example.app}\",",
+            "track: \"${3|alpha,beta,production,internal,rollout|}\",",
+            "metadata_path: \"${4:path}\",",
+            "json_key: \"${5:path/to/google-play-android-developer.json}\",",
+            "skip_upload_apk: ${6|true,false|},",
+            "skip_upload_metadata: ${7|true,false|},",
+            "skip_upload_images: ${8|true,false|},",
+            "skip_upload_screenshots: ${9|true,false|}", 
+            ")"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-deliver": {
+        "prefix": "f-action-deliver",
+        "body": [
+            "deliver(",
+            "submit_for_review: ${1|true,false|},",
+            "skip_screenshots: ${2|true,false|},",
+            "metadata_path: \"${3:path}\",",
+            "app_identifier: \"${4:com.example.app}\",",
+            "username(\"${5:username}\")",
+            "ipa: \"${6:path}\",",
+            "skip_metadata: ${7|true,false|},",
+            "force: ${8|true,false|},",
+            "app_review_information: {",
+                "first_name: \"${9:first_name}\",",
+                "last_name: \"${9:last_name}\",",
+                "phone_number: \"${10:phone_number}\",",
+                "email_address: \"${11:email_address}\",",
+                "# demo_user: \"${12:}\",",
+                "# demo_password: \"${13:}\",",
+                "notes: \"${14:}\"",
+            "}",
+            "price_tier: 0",
+            ")"
+                       ],
+        "description": ""
+    },
+    "fastlane-deliverfile": {
+        "prefix": "f-deliverfile",
+        "body": [
+            "metadata_path(\"${1:path}\")",
+            "app_review_information( {",
+                "first_name: \"${9:first_name}\",",
+                "last_name: \"${9:last_name}\",",
+                "phone_number: \"${10:phone_number}\",",
+                "email_address: \"${11:email_address}\",",
+                "# demo_user: \"${12:}\",",
+                "# demo_password: \"${13:}\",",
+                "notes: \"${14:}\"",
+            "})"
+                       ],
+        "description": ""
+    },
+    "fastlane-action-produce": {
+        "prefix": "f-action-produce",
+        "body": [
+            "create_app_online(",
+            "username: \"${1:username}\",",
+            "app_identifier: \"${2:com.example.app}\",",
+            "app_name: \"${3:MyApp}\",",
+            "language: \"${4:English}\",",
+            "app_version: \"${5:1.0}\",",
+            "sku: \"${2:com.example.app}\",",
+            "team_name: \"${6:team_name}\"", 
+            ")"
+                       ],
+        "description": ""
+    }
+}

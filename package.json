@@ -1,0 +1,62 @@
+{
+    "name": "vscode-fastlane-snippets",
+    "displayName": "Fastlane Snippets",
+    "description": "Fastlane Snippets for VS Code",
+    "version": "0.1.0",
+    "license": "MIT",
+    "publisher": "fivethree.io",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fivethree-team/vscode-fastlane-snippets.git"
+    },
+    "bugs": {
+        "url": "https://github.com/fivethree-team/vscode-fastlane-snippets/issues"
+    },
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "keywords": [
+        "fastlane",
+        "snippets",
+        "Appfile",
+        "Fastfile",
+        "Matchfile"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ruby",
+                "aliases": [
+                    "Ruby",
+                    "ruby"
+                ],
+                "filenamePatterns": [
+                    "Appfile",
+                    "Deliverfile",
+                    "Fastfile",
+                    "Gymfile",
+                    "Matchfile",
+                    "Scanfile",
+                    "Snapfile",
+                    "Podfile",
+                    "*.podspec",
+                    "Fastfile*",
+                    "*Fastfile"
+                ]
+            }
+        ],
+        "snippets": [
+            {
+                "language": "ruby",
+                "path": "./snippets/fastlane.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:publish": "vsce publish",
+        "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s"
+    }
+}
