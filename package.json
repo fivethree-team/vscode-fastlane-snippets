@@ -4,7 +4,7 @@
     "description": "Fastlane Snippets for VS Code",
     "version": "0.1.0",
     "license": "MIT",
-    "publisher": "fivethree.io",
+    "publisher": "fivethree",
     "repository": {
         "type": "git",
         "url": "https://github.com/fivethree-team/vscode-fastlane-snippets.git"
