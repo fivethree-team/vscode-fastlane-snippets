@@ -1,6 +1,7 @@
 # Fastlane Snippets for VS Code
 
-[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/version-short/fivethree.vscode-fivethree-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fivethree-snippets)
+[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/version/fivethree.vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fastlane-snippets)
+[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs/fivethree.vscode-fastlane-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fastlane-snippets)
 
 Visual Studio Code Extension adds fastlane snippets to your favorite IDE.
 
@@ -21,11 +22,6 @@ Type part of a snippet, press enter, and the snippet unfolds.
 # Table of Content
 * [Snippets Documentation](#snippets-documentation)
   * [Ruby](#ruby)
-
-# Snippets Documentation
-| Prefix | Description |
-| ------- | ----------|
-| `s-` | Svelte Snippets |
 
 ## Ruby
 
