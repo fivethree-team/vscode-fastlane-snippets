@@ -2,11 +2,11 @@
 
 [![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/version-short/fivethree.vscode-fivethree-snippets.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-fivethree-snippets)
 
-Visual Studio Code Extension adds TypeScript and HTML snippets for Fivethree Web Components.
+Visual Studio Code Extension adds fastlane snippets to your favorite IDE.
 
-All code snippets are based on and follow the Angular style guide [Fivethree Web Components](https://github.com/fivethree-team/fivethree).
+All code snippets are based on and follow the fastlane documentation.
 
-## Using Snippets for Fivethree Web Components
+## Using Snippets in VS Code
 
 Type part of a snippet, press enter, and the snippet unfolds.
 
